@@ -1,3 +1,5 @@
+//this is code may be used as well
+
 #include "Arduino.h"
 //#include "jk_bms.h"
 #include "lcd.h"

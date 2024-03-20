@@ -15,12 +15,12 @@ uint8_t ledState = LOW;
 
 
 void setup()  {
-  Serial_begin(115200);
-  ButtonConfigrature();
+
+Serial_begin(115200);
   configureLcdPins();
   lcdInitialization();
+  ButtonConfigrature();
   lcd_clear();
-  // create_char();
   lcd_begin(16,2);
   pinMode(PB5,OUTPUT);
 
@@ -28,7 +28,15 @@ void setup()  {
 
 void loop()  {
   
-  ButtonCheck(); 
+
+ ButtonProcess();
+
+
+
+  digitalWrite(PD5, HIGH);
+  
+  digitalWrite(PD5, LOW);
+
   
 }
 
