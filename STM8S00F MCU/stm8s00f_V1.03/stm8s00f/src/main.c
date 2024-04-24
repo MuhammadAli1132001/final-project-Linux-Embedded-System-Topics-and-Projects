@@ -6,7 +6,7 @@
 
 #define BUZZER_PIN PA2
 
-#define BUZZER_PIN_BEEP_INTERVAL 800
+#define BUZZER_PIN_BEEP_INTERVAL 700
 #define TRIES_TO_READ_BMS 3
 static unsigned long previousMillis = 0;
 static unsigned long beePpreviousMillis = 0;
