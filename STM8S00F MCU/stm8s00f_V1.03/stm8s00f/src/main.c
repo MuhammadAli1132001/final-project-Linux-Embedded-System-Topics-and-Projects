@@ -6,7 +6,7 @@
 
 #define BUZZER_PIN PA2
 
-#define BUZZER_PIN_BEEP_INTERVAL 700
+#define BUZZER_PIN_BEEP_INTERVAL 600
 #define TRIES_TO_READ_BMS 3
 static unsigned long previousMillis = 0;
 static unsigned long beePpreviousMillis = 0;
@@ -120,9 +120,14 @@ void processBMSdata(uint8_t *data){
   /*Voltage calculation in float*/
   voltage = tpvoltage * 0.01f;
   /*This is to handle the current direction leaving or entering the battery.*/
-  if ((tpcurrent & 0x8000) == 0x8000) {current = (float) (tpcurrent & 0x7FFF);} 
+  if ((tpcurrent & 0x8000) == 0x8000)
+  {
+	  current = (float) (tpcurrent & 0x7FFF);
+  } 
   else
-  {current = (float) (tpcurrent & 0x7FFF) * -1;}
+  {
+	  current = (float) (tpcurrent & 0x7FFF) * -1;
+  }
   /*Current calculation in float form*/
   current =  current * 0.01f;
   /*Power calculation in float form*/
